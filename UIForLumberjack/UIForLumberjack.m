@@ -112,20 +112,6 @@ NSString *const LogCellReuseIdentifier = @"LogCell";
 #endif
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 44;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    UIButton *closeButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [closeButton setTitle:@"Hide Log" forState:UIControlStateNormal];
-    closeButton.backgroundColor = [UIColor colorWithRed:59/255.0 green:209/255.0 blue:65/255.0 alpha:1];
-    [closeButton addTarget:self action:@selector(hideLog) forControlEvents:UIControlEventTouchUpInside];
-    return closeButton;
-}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSNumber *index = @(indexPath.row);
@@ -184,7 +170,7 @@ NSString *const LogCellReuseIdentifier = @"LogCell";
 
 - (UIFont *)fontOfMessage
 {
-    return [UIFont boldSystemFontOfSize:9];
+    return [UIFont boldSystemFontOfSize:13];
 }
 
 #pragma mark - Public Methods
